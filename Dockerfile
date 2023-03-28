@@ -8,7 +8,7 @@ COPY . .
 # RUN go build
 
 ##need to google this line
-RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o httpAPIserver .
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o httpapiserver .
 
 # EXPOSE 8080
 
@@ -20,9 +20,9 @@ FROM alpine
 WORKDIR /app
 ## defining flags from to copy form the previous os
 RUN apk add curl
-COPY --from=builder /app/httpAPIserver .
+COPY --from=builder /app/httpapiserver .
 COPY .env .env
 
-ENTRYPOINT ["./httpAPIserver"]
+ENTRYPOINT ["./httpapiserver"]
 
 CMD ["start"]
