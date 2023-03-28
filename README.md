@@ -120,53 +120,50 @@ This is a basic RESTful API server, build with Golang. In this API server I have
 
 #### Run the API server
 
-- `httpAPIserver start --port=8080`
+- `curl -X POST -H "Content-Type:application/json" -d '{"username":"Ashraful","password":"12345"}' http://localhost:8081/login`
 
 #### Get all products
 
-- `curl -X GET http://localhost:8080/products`
+- `curl -X GET -H "Authorization: Bearer ${TOKEN}" http://localhost:8081/products`
 
 #### Get single product
 
-- `curl -X GET http://localhost:8080/products/1`
+- `curl -X GET -H "Authorization: Bearer ${TOKEN}" http://localhost:8081/products/1`
 
 #### Get all brands
 
-- `curl -X GET http://localhost:8080/brands`
+- `curl -X GET -H "Authorization: Bearer ${TOKEN}" http://localhost:8081/brands`
 
 #### Get single brand
 
-- `curl -X GET http://localhost:8080/brands/1`
+- `curl -X GET -H "Authorization: Bearer ${TOKEN}" http://localhost:8081/brands/1`
 
 #### add new product
 
 ```
-curl -X POST -H "Content-Type:application/json" -d '{"product_id":5,"product_name":"keyboard","product_brand":{"brand_id":3,"brand_name":"A4tech","brand_product":[]}}' http://localhost:8080/products/addproduct
+curl -X POST -H "Content-Type:application/json" -d '{"product_id":5,"product_name":"keyboard","product_brand":{"brand_id":3,"brand_name":"A4tech","brand_product":[]}}' -H "Authorization: Bearer ${TOKEN}" http://localhost:8081/products/addproduct
 ```
 
 #### add new brand
 
 ```
-curl -X POST -H "Content-Type:application/json" -d '{"brand_id":4,"brand_name":"Dell","brand_product":[]}' http://localhost:8080/brands/addbrand
+curl -X POST -H "Content-Type:application/json" -d '{"brand_id":4,"brand_name":"Dell","brand_product":[]}' -H "Authorization: Bearer ${TOKEN}" http://localhost:8081/brands/addbrand
 ```
 
 #### Update any product
 
 ```
-curl -X POST -H "Content-Type:application/json" -d '{"product_id":4,"product_name":"mobile","product_brand":{"brand_id":2,"brand_name":"apple","brand_product":[3,4]}}' http://localhost:8080/products/update/4
+curl -X POST -H "Content-Type:application/json" -d '{"product_id":4,"product_name":"mobile","product_brand":{"brand_id":2,"brand_name":"apple","brand_product":[3,4]}}' -H "Authorization: Bearer ${TOKEN}" http://localhost:8081/products/update/4
 ```
 
 #### Delete a product
 
-- `curl -X DELETE -H http://localhost:8080/product/delete/1`
+- `curl -X DELETE -H 'Accept: application/json' -H "Authorization: Bearer ${TOKEN}" http://localhost:8081/products/delete/1`
 
 
 #### Delete a brand
 
-- `curl -X DELETE -H http://localhost:8080/brands/delete/1`
-
-
-- `curl -X GET http://localhost:8080/api/articles`
+- `curl -X DELETE -H 'Accept: application/json' -H "Authorization: Bearer ${TOKEN}" http://localhost:8080/brands/delete/1`
 
 
 
