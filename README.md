@@ -164,34 +164,10 @@ curl -X POST -H "Content-Type:application/json" -d '{"product_id":4,"product_nam
 #### Delete a brand
 
 - `curl -X DELETE -H http://localhost:8080/brands/delete/1`
-----------------
 
 
-### curl commands with Basic Authentication (it is valid for version : v1.0.1 and login function of version : v1.0.2)
+- `curl -X GET http://localhost:8080/api/articles`
 
-#### Get all articles
-
-- `curl -X GET --user admin:admin http://localhost:8080/api/articles`
-
-#### Get single article
-
-- `curl -X GET --user admin:admin http://localhost:8080/api/article/1`
-
-#### Create new article
-
-```
-curl -X POST --user admin:admin -H "Conten-Type:application/json" -d '{"id":"10","title":"update","body":"me","author":{"id":"11","name":"somebody","rating":9}}' http://localhost:8080/api/article
-```
-
-#### Update an article
-
-```
-curl -X PUT --user admin:admin -H "Conten-Type:application/json" -d '{"id":"10","title":"update","body":"me","author":{"id":"11","name":"somebody","rating":9}}' http://localhost:8080/api/article/1
-```
-
-#### Delete an article
-
-- `curl -X DELETE --user admin:admin http://localhost:8080/api/article/1`
 
 
 ----------------
