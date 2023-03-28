@@ -115,7 +115,7 @@ This is a basic RESTful API server, build with Golang. In this API server I have
 ### JWT Authentication
 
 - implemented JWT authentication
-- first of all user need to hit `/api/login` endpoint with basic authentication then a token will be given and with that token for specific time user can do other request
+- first of all user need to hit `/login` endpoint with basic authentication then a token will be given and with that token for specific time user can do other request
 ----------------
 
 #### Run the API server
@@ -157,14 +157,14 @@ curl -X POST -H "Content-Type:application/json" -d '{"product_id":4,"product_nam
 ```
 
 #### Delete a product
-
-- `curl -X DELETE -H 'Accept: application/json' -H "Authorization: Bearer ${TOKEN}" http://localhost:8081/products/delete/1`
-
+```
+curl -X DELETE -H 'Accept: application/json' -H "Authorization: Bearer ${TOKEN}" http://localhost:8081/products/delete/1`
+```
 
 #### Delete a brand
-
-- `curl -X DELETE -H 'Accept: application/json' -H "Authorization: Bearer ${TOKEN}" http://localhost:8080/brands/delete/1`
-
+```
+curl -X DELETE -H 'Accept: application/json' -H "Authorization: Bearer ${TOKEN}" http://localhost:8080/brands/delete/1`
+```
 
 
 ----------------
