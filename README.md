@@ -12,13 +12,13 @@ This is a basic RESTful API server, build with Golang. In this API server I have
 
 - `git clone https://github.com/AshrafulHaqueToni/httpAPIserver.git`
 - `cd httpAPIserver`
-- `go install httpAPIserver`
+- `go install ./httpAPIserver`
 
 ---------------
 
 ### Run by CLI Commands
 
-- start the API in default port : 8080 by `httpAPIserver start`
+- start the API in default port : 8081 by `httpAPIserver start`
 - start the API in your given port by `httpAPIserver start -p=8088`, give your port number in the place of 8088
 
 --------------
@@ -163,7 +163,7 @@ curl -X DELETE -H 'Accept: application/json' -H "Authorization: Bearer ${TOKEN}"
 
 #### Delete a brand
 ```
-curl -X DELETE -H 'Accept: application/json' -H "Authorization: Bearer ${TOKEN}" http://localhost:8080/brands/delete/1`
+curl -X DELETE -H 'Accept: application/json' -H "Authorization: Bearer ${TOKEN}" http://localhost:8081/brands/delete/1`
 ```
 
 
