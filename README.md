@@ -105,13 +105,6 @@ This is a basic RESTful API server, build with Golang. In this API server I have
 
 ----------------
 
-### Basic Authentication
-
-- implemented basic authentication middleware
-- give username and password for each query to the api endpoint otherwise access will be denied
-
-----------------
-
 ### JWT Authentication
 
 - implemented JWT authentication
